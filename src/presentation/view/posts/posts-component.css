@@ -1,0 +1,21 @@
+.post {
+	margin-bottom: 20px;
+}
+
+.poster {
+	height: 300px;
+}
+
+.favorite-container {
+	display: flex;
+	justify-content: center;
+}
+
+.favorite-btn {
+	margin-right: 10px;
+}
+
+.tags {
+	margin-top: 20px;
+	float: right;
+}
