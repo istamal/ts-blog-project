@@ -4,6 +4,12 @@
   min-height: 70vh;
 }
 
+@media (max-width: 500px) {
+  .site-layout-content {
+    width: 95%;
+  }
+}
+
 .header {
   position: fixed;
   width: 100%;

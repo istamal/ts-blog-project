@@ -109,7 +109,7 @@ export default class AuthComponent
           <Breadcrumb.Item>Add Post</Breadcrumb.Item>
         </Breadcrumb>
         <div className="site-card-border-less-wrapper">
-          <Card title="Sign in" bordered={false} style={{ width: 500 }}>
+          <Card title="Sign in" bordered={false} style={{ width: "100%" }}>
             <div className="margin-bottom">
               Status: 
               <span className={`${isAuthStatusPositive ? 'text-success' : 'text-danger'}`}>

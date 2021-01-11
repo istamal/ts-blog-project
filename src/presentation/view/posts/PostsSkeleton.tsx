@@ -10,7 +10,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -24,7 +24,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -38,7 +38,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -52,7 +52,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -66,7 +66,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -80,7 +80,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -94,7 +94,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -108,7 +108,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -122,7 +122,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -136,7 +136,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -150,7 +150,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -164,7 +164,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -178,7 +178,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -192,7 +192,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -206,7 +206,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -220,7 +220,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -234,7 +234,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -248,7 +248,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta
@@ -262,7 +262,7 @@ const PostsSkeleton: React.FC = (): JSX.Element => {
 			<div className="post">
 				<Card
 					hoverable
-					style={{ width: 500 }}
+					style={{ width: "100%" }}
 				>
 					<Skeleton loading={true} avatar active>
 					<Meta

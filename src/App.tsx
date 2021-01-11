@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import { Layout, Menu, Button } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
+import AuthButton from './presentation/view/auth/AuthButton';
 import './App.css';
 import 'antd/dist/antd.css';
 
@@ -42,7 +42,7 @@ function App() {
     }
   }, [token]);
 
-  const handleLogout = () => {
+  const handleLogout = (): void => {
     authViewModel.onClickSignOut()
     setIsAuth(false);
   }
@@ -53,20 +53,10 @@ function App() {
         <Header className="header">
           <div className="logo" />
           <Menu theme="dark" mode="horizontal">
-
-            {/* TODO Вынести в отдельный компонент и улучшить работу */}
-            <Button type="link">
-              {isAuth ? <Button type="link" onClick={handleLogout}>Logout</Button> : <Link to="/login">Login</Link>}
-            </Button>
-            <Button
-              icon={<PlusOutlined />}
-              type="primary" shape="round"
-            >
-              <Link style={{ color: "white" }} to="add_post">Add Post</Link>
-            </Button>
+            <AuthButton isAuth={isAuth} handleLogout={handleLogout} />
           </Menu>
         </Header>
-        <Content className="content" style={{ padding: '0 50px' }}>
+        <Content className="content">
           <div className="site-layout-content">
               <Switch>
                 <Route exact path="/" render={() => <PostsComponent postsViewModel={postsViewModel} />} />
