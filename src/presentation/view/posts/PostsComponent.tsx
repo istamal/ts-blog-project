@@ -9,6 +9,8 @@ import {
 	Divider
 } from 'antd';
 
+import { RouteComponentProps, withRouter } from 'react-router-dom';
+
 import { EditOutlined, EllipsisOutlined } from '@ant-design/icons';
 
 import './posts-component.css';
@@ -20,7 +22,7 @@ import FavoritePost from './FavoritePost';
 
 const { Meta } = Card;
 
-export interface PostsComponentProps {
+export interface PostsComponentProps extends RouteComponentProps {
 	postsViewModel: PostsViewModel;
 };
 
@@ -33,7 +35,7 @@ export interface PostsComponentState {
 	errorMessage: string;
 };
 
-export default class PostsComponent extends React.Component<PostsComponentProps, PostsComponentState>  implements BaseView {
+class PostsComponent extends React.Component<PostsComponentProps, PostsComponentState>  implements BaseView {
 	private postsViewModel: PostsViewModel;
 
 	public constructor(props: PostsComponentProps) {
@@ -105,6 +107,15 @@ export default class PostsComponent extends React.Component<PostsComponentProps,
 		}
 	}
 
+	// public onPostClick = (e: React.MouseEvent, slug: string) => {
+	// 	const clickedElement = e.currentTarget.className;
+	// 	console.log(clickedElement);
+	// 	if (e.currentTarget) {
+	// 		this.postsViewModel.setSlug(slug);
+	// 		this.props.history.push(slug);
+	// 	}
+	// }
+
 	public handleNextPage = async(page: number) => {
 		await this.getPosts(page);
 	}
@@ -122,6 +133,7 @@ export default class PostsComponent extends React.Component<PostsComponentProps,
 					) : posts.map(post => (
 						<div className="post" key={post.slug}>
 							<Card
+								// onClick={(e) => this.onPostClick(e, post.slug)}
 								hoverable
 								style={{ width: "100%" }}
 								actions={[
@@ -158,3 +170,5 @@ export default class PostsComponent extends React.Component<PostsComponentProps,
 		);
 	}
 };
+
+export default withRouter(PostsComponent);

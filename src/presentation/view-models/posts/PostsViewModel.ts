@@ -3,11 +3,11 @@ import BaseViewModel from '../BaseViewModel';
 
 export default interface PostsViewModel extends BaseViewModel {
 	posts: Array<Article>;
-	isPostsLouded: boolean;
 
 	isShowError: boolean;
 	errorMessage: string;
 
+	setSlug(slug: string): void;
 	onPostsChanged(): void;
 	fetchPosts(page?: number): Promise<void>;
 	favorite(slug: string): Promise<void>;

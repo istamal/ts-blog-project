@@ -20,8 +20,6 @@ const Post: React.FC = (): JSX.Element => {
 		fetchArticle();
 	});
 
-	console.log(article);
-
 	return(
 		<>
 			<h1>fdghdfghfdhf</h1>

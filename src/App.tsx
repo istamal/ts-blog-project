@@ -16,6 +16,7 @@ import PostsRepository from './data/posts/PostsApi';
 import PostsViewModelImpl from './presentation/view-models/posts/PostsViewModelImpl';
 import PostsComponent from './presentation/view/posts/PostsComponent';
 import AddPostComponent from './presentation/view/posts/AddPostComponent';
+import Post from './presentation/view/posts/Post';
 
 const { Header, Content, Footer } = Layout;
 
@@ -49,7 +50,7 @@ function App() {
 
   return (
       <Layout className="layout">
-        <Router basename="blog">
+        <Router basename="blog">       
         <Header className="header">
           <div className="logo" />
           <Menu theme="dark" mode="horizontal">
@@ -58,11 +59,14 @@ function App() {
         </Header>
         <Content className="content">
           <div className="site-layout-content">
+            
               <Switch>
                 <Route exact path="/" render={() => <PostsComponent postsViewModel={postsViewModel} />} />
                 <Route exact path="/login" render={() => <AuthComponent authViewModel={authViewModel} /> } />
                 <Route path="/add_post" render={() => <AddPostComponent /> } />
+                <Route path={`/${postsViewModel.slug}`} component={Post} />
               </Switch>
+            
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>dagalaev@gmail.com ©2018 Created by Istamal</Footer>

@@ -3,18 +3,15 @@ import { Article } from '../structures/PostsResult';
 
 export default class PostsHolder {
 	private postsListeners: Array<PostsListener>;
-	private isPostsLouded: boolean;
 	private posts: Array<Article>;
 
 	public constructor() {
-		this.isPostsLouded = false;
 		this.postsListeners = [];
 		this.posts = [];
 	}
 
 	public setPosts(posts: Array<Article>): void {
 		this.posts = posts;
-		this.isPostsLouded = true;
 		this.notifyListeners();
 	}
 
@@ -38,10 +35,6 @@ export default class PostsHolder {
 		});
 		this.posts = newPosts;
 		this.notifyListeners();
-	}
-
-	public isLouded(): boolean {
-		return this.isPostsLouded;
 	}
 
 	public addPostsListener(postsListener: PostsListener): void {

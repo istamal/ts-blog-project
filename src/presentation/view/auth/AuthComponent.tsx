@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, Input, Button, Spin, Card } from 'antd';
-import { EyeInvisibleOutlined, EyeTwoTone, ExportOutlined, LoadingOutlined } from '@ant-design/icons';
+import { EyeInvisibleOutlined, EyeTwoTone, ExportOutlined, ImportOutlined, LoadingOutlined } from '@ant-design/icons';
 import './auth-component.css';
 import BaseView from '../BaseView';
 import AuthViewModel from '../../view-models/auth/AuthViewModel';
@@ -110,8 +110,7 @@ export default class AuthComponent
         </Breadcrumb>
         <div className="site-card-border-less-wrapper">
           <Card title="Sign in" bordered={false} style={{ width: "100%" }}>
-            <div className="margin-bottom">
-              Status: 
+            <div className="margin-bottom"> 
               <span className={`${isAuthStatusPositive ? 'text-success' : 'text-danger'}`}>
                 {authStatus}
               </span>
@@ -139,36 +138,38 @@ export default class AuthComponent
             {isShowError && (
               <div className="row my-3 text-danger justify-content-center">{errorMessage}</div>
             )}
-            {isSignInButtonVisible && (
-              <div className="row mt-4">
-                <Button
-                  type="primary"
-                  htmlType="button"
-                  className="col btn btn-primary"
-                  onClick={this.handleSubmit}
-                >
-                  Sign in
-                  {isLouding ? (
-                    <Spin indicator={antIcon} />
-                  ) : (
-                    <ExportOutlined />
-                  )}
-                </Button>
-              </div>
-            )}
+            <div className="auth-btns">
+              {isSignInButtonVisible && (
+                <div className="row mt-4">
+                  <Button
+                    type="primary"
+                    htmlType="button"
+                    className="col btn btn-primary"
+                    onClick={this.handleSubmit}
+                  >
+                    Sign in
+                    {isLouding ? (
+                      <Spin indicator={antIcon} />
+                    ) : (
+                      <ImportOutlined />
+                    )}
+                  </Button>
+                </div>
+              )}
 
-            {isSignOutButtonVisible && (
-              <div className="row mt-4">
-                <Button
-                  type="primary"
-                  className="col btn btn-primary"
-                  onClick={(): void => this.authViewModel.onClickSignOut()}
-                >
-                  Sign out
-                  <ExportOutlined />
-                </Button>
-              </div>
-            )}
+              {isSignOutButtonVisible && (
+                <div className="row mt-4">
+                  <Button
+                    type="link"
+                    className="col btn btn-primary"
+                    onClick={(): void => this.authViewModel.onClickSignOut()}
+                  >
+                    Sign out
+                    <ExportOutlined />
+                  </Button>
+                </div>
+              )}
+            </div>
           </Card>
         </div>
       </>

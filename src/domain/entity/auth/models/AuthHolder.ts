@@ -29,7 +29,7 @@ export default class AuthHolder {
 
 	public getAuthTocken(): string {
 		if (!this.isAuthorized) {
-			throw new Error('Пользователь не авторизован');
+			throw new Error('User are not Authorized');
 		}
 
 		return this.authToken;

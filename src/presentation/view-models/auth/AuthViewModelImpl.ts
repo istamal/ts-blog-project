@@ -50,12 +50,12 @@ export default class AuthViewModelImpl implements AuthViewModel, AuthListener {
 		if (this.authHolder.isUserAuthorized()) {
       this.isSignInButtonVisible = false;
       this.isSignOutButtonVisible = true;
-      this.authStatus = 'authorized';
+      this.authStatus = 'You are authorized';
       this.isAuthStatusPositive = true;
     } else {
       this.isSignInButtonVisible = true;
       this.isSignOutButtonVisible = false;
-      this.authStatus = 'is not autorized';
+      this.authStatus = 'You are not autorized';
       this.isAuthStatusPositive = false;
     }
 

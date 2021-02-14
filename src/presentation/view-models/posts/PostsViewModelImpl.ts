@@ -7,8 +7,8 @@ import { Article } from '../../../domain/entity/posts/structures/PostsResult';
 
 export default class PostsViewModelImpl implements PostsViewModel, PostsListener {
 	public posts: Array<Article>;
-	public isPostsLouded: boolean;
 	public urlQuery: string;
+	public slug: string;
 
 	public isShowError: boolean;
 	public errorMessage: string;
@@ -20,14 +20,20 @@ export default class PostsViewModelImpl implements PostsViewModel, PostsListener
 
 	public constructor(postsHolder: PostsHolder, postsUseCase: PostsUseCase) {
 		this.posts = [];
-		this.isPostsLouded = false;
 		this.isShowError = false;
+		this.slug = '';
 		this.errorMessage = '';
 		this.postsHolder = postsHolder;
 		this.postsUseCase = postsUseCase;
 		this.postsHolder.addPostsListener(this);
 		this.urlQuery = '/api/articles';
 	}
+
+	public setSlug(slug: string): void {
+		this.slug = slug;
+		console.log(this.slug);
+		this.notifyViewsAboutChanges();
+	};
 
 	public attachView(baseView: BaseView): void {
 		this.baseView = baseView;
@@ -38,11 +44,7 @@ export default class PostsViewModelImpl implements PostsViewModel, PostsListener
 	}
 
 	public onPostsChanged(): void {
-		if (this.postsHolder.isLouded()) {
-			this.posts = this.postsHolder.getPosts();
-		} else {
-			this.isPostsLouded = false;
-		}
+		this.posts = this.postsHolder.getPosts();
 
 		this.notifyViewsAboutChanges();
 	}
@@ -50,7 +52,6 @@ export default class PostsViewModelImpl implements PostsViewModel, PostsListener
 	public fetchPosts = async(page?: number): Promise<void> => {
 		try {
 			await this.postsUseCase.fetchPosts(page);
-			this.isPostsLouded = true;
 			this.isShowError = false;
 			this.errorMessage = '';
 		} catch (err) {
